@@ -1358,11 +1358,13 @@ with tabs[0]:  # Single Job Analysis tab
         # Add a button to analyze the custom job
         analyze_custom = st.button("Analyze Custom Job", type="primary")
     
-    # Add a Clear Entries button
-    if st.button("Clear Entries", type="secondary"):
-        # This will trigger a rerun with empty values
-        st.session_state.clear()
-        st.rerun()
+    # Add a Clear Entries button centered on the screen
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col2:
+        if st.button("Clear Entries", type="secondary"):
+            # This will trigger a rerun with empty values
+            st.session_state.clear()
+            st.rerun()
     
     # Determine which job to analyze
     job_to_analyze = None
@@ -1804,11 +1806,13 @@ with tabs[1]:  # Job Comparison tab
                 if job and job not in jobs_to_compare:
                     jobs_to_compare.append(job)
     
-    # Clear selections button
-    if st.button("Clear All Selections", type="secondary"):
-        # This will trigger a rerun with empty values
-        st.session_state.clear()
-        st.rerun()
+    # Clear selections button centered
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col2:
+        if st.button("Clear All Selections", type="secondary"):
+            # This will trigger a rerun with empty values
+            st.session_state.clear()
+            st.rerun()
     
     # Display comparison when at least 2 jobs are selected
     if jobs_to_compare and len(jobs_to_compare) >= 2:
