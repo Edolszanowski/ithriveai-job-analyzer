@@ -386,6 +386,54 @@ with tabs[0]:  # Single Job Analysis tab
             ],
             'analysis': 'Dentistry has relatively low displacement risk due to the manual dexterity required for procedures, need for patient rapport, and complexity of treatment planning.'
         },
+        'Medical Assistant': {
+            'year_1_risk': 15.0,
+            'year_5_risk': 30.0,
+            'job_category': 'healthcare',
+            'risk_factors': [
+                'Electronic health records automate documentation',
+                'Patient intake processes can be digitized',
+                'Routine measurements can be automated'
+            ],
+            'protective_factors': [
+                'Patient interaction requires human empathy',
+                'Clinical procedures need human dexterity',
+                'Adapting to office workflow needs human flexibility'
+            ],
+            'analysis': 'Medical assistants face moderate displacement risk for administrative tasks, but their clinical responsibilities and patient interaction roles provide significant protection against full automation.'
+        },
+        'Radiologic Technologist': {
+            'year_1_risk': 20.0,
+            'year_5_risk': 40.0,
+            'job_category': 'healthcare',
+            'risk_factors': [
+                'AI image analysis can detect abnormalities',
+                'Automated positioning systems are developing',
+                'Digital workflows reduce manual processing'
+            ],
+            'protective_factors': [
+                'Patient positioning requires human judgment',
+                'Patient comfort and safety need human attention',
+                'Complex cases require technique adaptations'
+            ],
+            'analysis': 'Radiologic technologists face moderate automation risk as AI enhances image analysis, but the physical positioning of patients and handling of complex cases will continue to require human expertise.'
+        },
+        'Occupational Therapist': {
+            'year_1_risk': 5.0,
+            'year_5_risk': 15.0,
+            'job_category': 'healthcare',
+            'risk_factors': [
+                'Some exercises can be demonstrated via digital platforms',
+                'Progress tracking can be automated',
+                'Documentation processes are becoming digitized'
+            ],
+            'protective_factors': [
+                'Personalized therapy requires human assessment',
+                'Adaptive interventions need creative problem-solving',
+                'Emotional support and motivation require human connection'
+            ],
+            'analysis': 'Occupational therapists have very low displacement risk due to the highly personalized nature of their work, need for creative problem-solving, and importance of human connection in therapy.'
+        },
         
         # Customer Service Jobs
         'Customer Service Representative': {
@@ -1028,6 +1076,125 @@ with tabs[0]:  # Single Job Analysis tab
                 'Client interaction needs human empathy'
             ],
             'analysis': 'Legal secretary roles face high automation risk for routine tasks, though roles may evolve toward more complex coordination, client interaction, and specialized support functions.'
+        },
+        'Transportation Planner': {
+            'year_1_risk': 18.0,
+            'year_5_risk': 38.0,
+            'job_category': 'transportation',
+            'risk_factors': [
+                'Automated traffic modeling and simulation tools',
+                'AI optimization of transportation networks',
+                'Smart city technologies automate data collection'
+            ],
+            'protective_factors': [
+                'Community engagement requires human facilitation',
+                'Complex urban planning needs human creativity',
+                'Policy development needs human judgment'
+            ],
+            'analysis': 'Transportation planners face moderate automation risk as AI tools enhance modeling and optimization, but the complex interplay of technical, social, and political factors will continue to require human expertise.'
+        },
+        'Fleet Manager': {
+            'year_1_risk': 20.0,
+            'year_5_risk': 45.0,
+            'job_category': 'transportation',
+            'risk_factors': [
+                'Automated fleet tracking and monitoring systems',
+                'AI-driven maintenance scheduling',
+                'Autonomous vehicle fleet management platforms'
+            ],
+            'protective_factors': [
+                'Emergency response requires human judgment',
+                'Driver management needs human leadership',
+                'Complex logistics problems need human creativity'
+            ],
+            'analysis': 'Fleet managers face significant automation of routine monitoring and scheduling tasks, but roles involving personnel management, emergency response, and strategic planning will continue to need human expertise.'
+        },
+        
+        # High-Impact AI Jobs (Most at risk in next 5 years)
+        'Data Entry Specialist': {
+            'year_1_risk': 65.0,
+            'year_5_risk': 95.0,
+            'job_category': 'administrative',
+            'risk_factors': [
+                'Automated data extraction tools (OCR) are highly advanced',
+                'Machine learning can process unstructured data efficiently',
+                'Natural language processing handles document content',
+                'Cloud-based workflow automation replacing manual entry'
+            ],
+            'protective_factors': [
+                'Complex data validation still benefits from human oversight',
+                'Unusual exceptions may require human judgment',
+                'Some specialized fields require domain knowledge'
+            ],
+            'analysis': 'Data entry specialists face extremely high displacement risk as AI text recognition, automated form processing, and intelligent document extraction continue to advance rapidly. Nearly all routine data entry tasks will be automated within 5 years.'
+        },
+        'Insurance Underwriter': {
+            'year_1_risk': 50.0,
+            'year_5_risk': 85.0,
+            'job_category': 'finance',
+            'risk_factors': [
+                'Automated risk assessment algorithms process applications faster',
+                'Machine learning can detect patterns across massive datasets',
+                'Standardized policies can be fully automated',
+                'Digital application flows eliminate human assessment steps'
+            ],
+            'protective_factors': [
+                'Complex or unusual cases still require human judgment',
+                'New insurance products need human design',
+                'Relationship-based underwriting benefits from human touch'
+            ],
+            'analysis': 'Insurance underwriters face very high displacement risk as automated algorithms increasingly handle risk assessment. By 2030, only the most complex cases or specialized products will require human underwriters.'
+        },
+        'Mortgage Processor': {
+            'year_1_risk': 55.0,
+            'year_5_risk': 90.0,
+            'job_category': 'finance',
+            'risk_factors': [
+                'Document processing automation is highly advanced',
+                'Standardized approval workflows are easily automated',
+                'AI credit modeling outperforms traditional methods',
+                'Digital mortgage platforms handle entire process'
+            ],
+            'protective_factors': [
+                'Complex financial situations may need human review',
+                'Regulatory changes require human adaptation',
+                'Customer reassurance sometimes needs human touch'
+            ],
+            'analysis': 'Mortgage processors face extreme automation risk as digital platforms, document processing AI, and automated approval workflows continue to advance. Most routine mortgage processing will be fully automated within 5 years.'
+        },
+        'Telemarketer': {
+            'year_1_risk': 70.0,
+            'year_5_risk': 95.0,
+            'job_category': 'sales',
+            'risk_factors': [
+                'AI voice assistants can handle scripted conversations',
+                'Chatbots and voice bots manage initial contact efficiently',
+                'Automated dialers and follow-up systems eliminate manual work',
+                'Customer preference for self-service digital channels'
+            ],
+            'protective_factors': [
+                'Complex objection handling still benefits from human creativity',
+                'Building genuine rapport often requires human empathy',
+                'High-value sales may still warrant human attention'
+            ],
+            'analysis': 'Telemarketers face the highest displacement risk of almost any occupation as conversational AI, voice assistants, and automated marketing systems continue rapid advancement. Nearly all traditional telemarketing roles will be eliminated within 5 years.'
+        },
+        'Proofreader': {
+            'year_1_risk': 60.0,
+            'year_5_risk': 90.0,
+            'job_category': 'creative',
+            'risk_factors': [
+                'NLP tools like Grammarly already handle most routine checks',
+                'AI text analysis detects errors with increasing accuracy',
+                'Automated style guide enforcement is highly effective',
+                'Machine learning improves consistency verification'
+            ],
+            'protective_factors': [
+                'Nuanced contextual understanding still benefits from humans',
+                'Creative or specialized content may need human judgment',
+                'Final quality assurance often needs human oversight'
+            ],
+            'analysis': 'Proofreaders face extremely high displacement risk as language AI tools become increasingly sophisticated at detecting errors, inconsistencies, and style issues. Within 5 years, most routine proofreading will be fully automated.'
         },
         
         # Creative Jobs
