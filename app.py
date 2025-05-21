@@ -1796,9 +1796,17 @@ with tabs[1]:  # Job Comparison tab
         st.markdown("<h3 style='color: #333333;'>Add custom job titles</h3>", unsafe_allow_html=True)
         
         # Custom job input fields (allow up to 3)
-        custom_job1 = st.text_input("Custom Job 1:", placeholder="e.g. Interior Designer", key="custom_job1")
-        custom_job2 = st.text_input("Custom Job 2:", placeholder="e.g. Web Developer", key="custom_job2")
-        custom_job3 = st.text_input("Custom Job 3:", placeholder="e.g. Data Analyst", key="custom_job3")
+        # Initialize with empty values if they don't exist in session state
+        if 'custom_job1' not in st.session_state:
+            st.session_state.custom_job1 = ""
+        if 'custom_job2' not in st.session_state:
+            st.session_state.custom_job2 = ""
+        if 'custom_job3' not in st.session_state:
+            st.session_state.custom_job3 = ""
+            
+        custom_job1 = st.text_input("Custom Job 1:", placeholder="e.g. Interior Designer", key="custom_job1", value="")
+        custom_job2 = st.text_input("Custom Job 2:", placeholder="e.g. Web Developer", key="custom_job2", value="")
+        custom_job3 = st.text_input("Custom Job 3:", placeholder="e.g. Data Analyst", key="custom_job3", value="")
         
         # Add button for custom jobs
         if st.button("Add Custom Jobs to Comparison", type="primary"):
