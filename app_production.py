@@ -250,7 +250,7 @@ with tabs[0]:  # Single Job Analysis tab
                 if "BLS_API_KEY" in str(e):
                     st.error("The Bureau of Labor Statistics (BLS) API key is needed to fetch real-time data. Using pre-loaded job data instead.")
                     # Use our internal job data instead of BLS data
-                    from job_api_integration import get_internal_job_data
+                    from job_api_integration_database_only import get_job_data as get_internal_job_data
                     job_data = get_internal_job_data(search_job_title)
                 else:
                     st.error(f"Error: {str(e)}")
