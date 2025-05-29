@@ -246,14 +246,14 @@ with tabs[0]:  # Single Job Analysis tab
             try:
                 # Get job data with optimized API calls
                 job_data = job_api_integration.get_job_data(search_job_title)
-            except ValueError as e:
-                if "BLS_API_KEY" in str(e):
-                    st.error("The Bureau of Labor Statistics (BLS) API key is needed to fetch real-time data. Using pre-loaded job data instead.")
-                    # Use our internal job data instead of BLS data
-                    from job_api_integration_database_only import get_job_data as get_internal_job_data
-                    job_data = get_internal_job_data(search_job_title)
+            except Exception as e:
+                # If job not found in database, show clear error message
+                if "not found in BLS database" in str(e):
+                    st.error(f"Job title '{search_job_title}' not found in our BLS database. Please use the Admin Dashboard to add missing job titles.")
+                    st.info("Use the search suggestions or contact support to add this occupation with authentic BLS data.")
+                    st.stop()
                 else:
-                    st.error(f"Error: {str(e)}")
+                    st.error(f"Database error: {str(e)}")
                     st.stop()
             
             # Save to database

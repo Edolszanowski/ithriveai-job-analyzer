@@ -66,8 +66,13 @@ def get_job_data(job_title: str) -> Dict[str, Any]:
                 # Found in database - use real BLS data
                 return format_database_job_data(row, job_title)
             
-            # Step 2: If not in database, try to fetch from BLS API and add to database
-            return fetch_and_store_bls_data(job_title, engine)
+            # Step 2: If not found in database, return error - NO fallback data
+            return {
+                "error": f"Job title '{job_title}' not found in BLS database",
+                "job_title": job_title,
+                "source": "error",
+                "message": "This job title needs to be added to the database with authentic BLS data"
+            }
             
     except Exception as e:
         return {
